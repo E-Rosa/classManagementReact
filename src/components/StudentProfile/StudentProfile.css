@@ -1,0 +1,47 @@
+:root{
+    --font-body: 1em;
+    --font-style: 'Roboto', sans-serif;
+}
+#student-profile-page{
+    margin:0;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-height:100vh;
+    min-height:105vh;
+    font-size: var(--font-body);
+    padding-top:2vh;
+
+}
+#student-profile-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding:1vh 2vw;
+    border:1px solid grey;
+    border-radius:30px;
+    min-width:80vw;
+    animation: fadeIn .5s ease-in-out;
+}
+@keyframes fadeIn {
+    from{margin-left:10vw; opacity:0%;}
+    to{margin-left:0; opacity:100%;}
+}
+.student-info-input{
+    border:0;
+    border-bottom:1px solid grey;
+    min-width:50vw;
+    max-height:70vh;
+    width:100%;
+    font-size:var(--font-body);
+    font-family:var(--font-style);
+}
+#student-info-submit-button{
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    background-color:green;
+}
+
