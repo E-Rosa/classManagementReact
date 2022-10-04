@@ -4,13 +4,10 @@ import '../../styles/globals.css';
 import './SearchBar.css';
 
 function SearchBar() {
-    const [input, setInput] = React.useState('');
+    const [searchValue, setInput] = React.useState('');
     const [students, setStudents] = React.useState([]);
 
-    function storeStudentID(event){
-        window.localStorage.removeItem("studentID");
-        window.localStorage.setItem("studentID", event.target.lastChild.innerText);
-    }
+   
     const studentCards = students.map((student)=>{
                 return (
                     <StudentCard
@@ -18,7 +15,6 @@ function SearchBar() {
                         name={student.name}
                         id={student.id}
                         status={student.status}
-                        event={storeStudentID}
                      />
                 )
             });
@@ -28,7 +24,7 @@ function SearchBar() {
     };
 
     React.useEffect(()=>{
-        fetch(`http://localhost:5000/api/students/${input}`)
+        fetch(`http://localhost:5000/api/classManager/students/${searchValue}`)
         .then((res)=>{
             return res.json();
         })
@@ -37,7 +33,7 @@ function SearchBar() {
         }).catch((err)=>{
             console.log('error');
         })
-    }, [input]);
+    }, [searchValue]);
 
     return (
         

@@ -11,34 +11,35 @@ function StudentProfile() {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/api/students/profile/${window.localStorage.getItem(
+      `http://localhost:5000/api/classManager/students/profile/${window.localStorage.getItem(
         "studentID"
       )}`
     )
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        const student = res[0];
-        setStudent(() => {
-          return {
-            birthday: student.birthday,
-            city: student.city,
-            description: student.description,
-            frequency: student.frequency,
-            id: student.id,
-            level: student.level,
-            name: student.name,
-            status: student.status,
-            subscription: student.subscription,
-            teacherId: student.teacher_id,
-            teacherName: student.teacher_name
-          };
-        });
-      })
-      .catch((error) => {
-        console.log(error);
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      console.log(res)
+      const student = res[0];
+      setStudent(() => {
+        return {
+          birthday: student.birthday,
+          city: student.city,
+          description: student.description,
+          frequency: student.frequency,
+          id: student.id,
+          level: student.level,
+          name: student.name,
+          status: student.status,
+          subscription: student.subscription,
+          teacherId: student.teacher_id,
+          teacherName: student.teacher_name
+        };
       });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }, []);
 
 
@@ -61,12 +62,15 @@ function StudentProfile() {
   
   return (
     <>
-    <h2>{user.toString()}</h2> 
-    {user && <EditPopUp />}
       <form id="student-profile-page">
         <main id="student-profile-container">
+        <div id='student-profile-header'>
           <h2 className="title">Student Profile</h2>
-
+          <button
+            className="edit-button"
+            id="-button"
+          ></button>
+        </div>
           <StudentInfo
               inputType={'id'}
               title='ID: '

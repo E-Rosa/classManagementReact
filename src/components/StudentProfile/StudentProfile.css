@@ -29,6 +29,13 @@
     from{margin-left:10vw; opacity:0%;}
     to{margin-left:0; opacity:100%;}
 }
+#student-profile-header{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:10px;
+}
+
 .student-info-input{
     border:0;
     border-bottom:1px solid grey;

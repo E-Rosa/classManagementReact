@@ -11,12 +11,6 @@ export function StudentInfo(props) {
       <span type="text" id="id-input" className="student-info-input">
         {props.fieldValue}
       </span>
-
-      <button
-        className="edit-button"
-        id="-button"
-        onClick={props.handleClick}
-      ></button>
     </span>
   );
 }
