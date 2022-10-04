@@ -6,8 +6,7 @@ import {EditPopUp} from '../EditPopUp/EditPopUp.js';
 
 function StudentProfile() {
   const [student, setStudent] = useState({});
-  const [inputType, setInputType] = useState(null);
-  const [user, setUser] = useState(true);
+  const [formData, setFormData] = useState({});
 
   useEffect(() => {
     fetch(
@@ -42,94 +41,39 @@ function StudentProfile() {
     });
   }, []);
 
-
-  function makeEditable() {
-    console.log('makeEditable triggered');
-    setUser(true);
-    //setInputType(this.inputType);
+  function handleChange(e){
+    let input = e.target.value;
+    setFormData({...formData, [e.target.name]: input})
+    console.log(formData)
   }
-
-  function updateField(data){
-    console.log('updateField triggered');
-          setStudent((prev)=>{
-            return {
-              ...prev,
-              [inputType]: data,
-            }
-          })
-    //makeEditable();
+  function handleSubmit(e){
+    e.preventDefault();
+    fetch(`http://localhost:5000/api/classManager/students/profile/${student.id}`,
+    {
+      method: 'PUT',
+      body: JSON.stringify(student)
+    })
   }
   
   return (
     <>
-      <form id="student-profile-page">
+      <form id="student-profile-page" onSubmit={handleSubmit}>
         <main id="student-profile-container">
-        <div id='student-profile-header'>
-          <h2 className="title">Student Profile</h2>
-          <button
-            className="edit-button"
-            id="-button"
-          ></button>
-        </div>
-          <StudentInfo
-              inputType={'id'}
-              title='ID: '
-              fieldValue={student.id}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'name'}
-              title='Name: '
-              fieldValue={student.name}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'level'}
-              title='Level: '
-              fieldValue={student.level}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'status'}
-              title='Status: '
-              fieldValue={student.status}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'description'}
-              title='Description: '
-              fieldValue={student.description}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'subscription'}
-              title='Subscription: '
-              fieldValue={student.subscription}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'teacher_name'}
-              title='Teacher: '
-              fieldValue={student.teacherName}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'frequency'}
-              title='Frequency: '
-              fieldValue={student.frequency}
-              handleClick={makeEditable}
-          />
-          <StudentInfo
-              inputType={'city'}
-              title='City: '
-              fieldValue={student.city}
-              handleClick={makeEditable}
-          />
-          
-          <button className="button" id="submit-button" type='submit'>
-            Submit
-          </button>
+          <div id='student-profile-header'>
+            <h2 className="title">Student Profile</h2>
+            <button
+              className="edit-button"
+              id="-button"
+            ></button>
+          </div>
+          <fieldset className="student-info-container">
+            <label className="student-info-type"> <b>ID</b> </label>
+            <input type="text" className="student-info-input" name='id' onChange={handleChange} />
+          </fieldset>
+          <button className="button" id="submit-button" type='submit'>Submit</button>
         </main>
+
+
         <section id="button-container">
           <button className="button" id="classes-button">
             Classes
