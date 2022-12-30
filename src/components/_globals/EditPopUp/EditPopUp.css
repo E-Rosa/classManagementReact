@@ -1,0 +1,21 @@
+.delete-pop-up-container{
+    position:absolute;
+    height:100vh;
+    width:100vw;
+    z-index:1000;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:rgb(179, 179, 179);
+    opacity:97%;
+    gap:10px;
+}
+.pop-up-button{
+    opacity:100%;
+}
+.pop-up-error-message{
+    color:black;
+    font-weight:bold;
+    border-radius:10px;
+}

@@ -1,16 +1,42 @@
-body{
-    min-height:105vh;   
+/*Variables--------------------------------------------------------------------*/
+:root{
+    --poppins: 'Poppins', sans-serif;
+    --darkest:#0B3948;
+    --dark-grey:#416165;
+    --light-purple:#ACB0BD;
+    --lighter-purple:#ACB0BD;
+    --lightest:#D9DBF1;
 }
+/*HTML Tags and inputs-----------------------------------------------------------------------------------*/
+body{
+    margin:0;
+}
+.number-input{
+    max-width:100px;
+}
+.date-input{
+    min-width:100px;
+}
+/*Global Components --------------------------------------------------------------------------*/
 .button{
-    background-color:grey;
+    background-color:var(--dark-grey);
     color:white;
     border-radius:20px;
     padding:.5em 1em .5em 1em;
-    border:0;
-    margin-top:4vh;
-    font-size:1.1em;
+    border:1px solid transparent;
+    font-size:1em;
     text-align: center;
     text-justify: center;
+    cursor:pointer;
+    transition: .4s ease;
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    animation: fadeIn .5s ease-in-out;
+}
+.button:hover{
+    color:grey;
+    background-color:white;
+    border: 1px solid grey
 }
 .title{
     border-bottom: 1px solid gray;
@@ -20,16 +46,74 @@ body{
     font-style: bold;
     color: rgb(87, 87, 87);
 }
-#add-button{
-    position:fixed;
-    bottom:8vh;
-    right:3vw;
-    border-radius:100%;
-    height:50px;
-    width:50px;
-    padding:1em;
+.row-container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width:100%;
+}
+.row-container-spaced{
     display:flex;
-    align-items:center;
-    justify-content: center;
-    background-color:rgb(61, 61, 61);
+    flex-direction:row;
+    gap:10px;
+}
+.column-container-spaced{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+.form-container{
+    padding: 1em;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: -5px 5px var(--dark-grey);
+	animation: fadeInFromTop .5s ease-in;
+	max-width:22,5vw;
+	min-width:300px;
+}
+.delete-button{
+    background-image:url('../components/assets/Delete-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:20px;
+    height:20px;
+    border:0;
+    cursor:pointer;
+    position:relative;
+    align-self:center;
+    margin-left:1vw;
+}
+
+/*Success and error classes and animation----------------------*/
+.success{
+    animation: 1s successAnim;
+}
+@keyframes successAnim{
+    0%{background-color:var(--darkest);}
+    50%{background-color:rgb(154, 255, 154)}
+    0%{background-color:var(--darkest);}
+}
+.error{
+    animation: 1s errorAnim;
+}
+@keyframes errorAnim{
+    0%{background-color:var(--darkest);}
+    50%{background-color:rgb(255, 147, 147)}
+    0%{background-color:var(--darkest);}
+}
+.error-message{
+    border-radius:10px;
+    color:white;
+}
+
+/*Fade In and Out animations----------------------------------*/
+@keyframes fadeInFromTop {
+    from{margin-top:6vh; opacity:0%;}
+    to{margin-top:0;opacity:100%;}
+}
+
+@keyframes fadeIn {
+    from{margin-left:10vw; opacity:0%;}
+    to{margin-left:0; opacity:100%;}
 }

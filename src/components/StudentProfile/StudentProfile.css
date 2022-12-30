@@ -1,54 +1,134 @@
 :root{
     --font-body: 1em;
-    --font-style: 'Roboto', sans-serif;
+    --poppins: 'Poppins', sans-serif;
+    --darkest:#0B3948;
+    --dark-grey:#416165;
+    --light-purple:#ACB0BD;
+    --lighter-purple:#ACB0BD;
+    --lightest:#D9DBF1;
+    --pending: #e2ff22;
+	--done:  rgb(93, 214, 93);
+	--miss:  rgb(255, 147, 147);
 }
-#student-profile-page{
+input{
+    border:0;
+}
+.student-profile-page * {
+    font-family: var(--poppins);
+}
+.student-profile-page{
+    font-family: var(--poppins);
     margin:0;
     display:flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
-    max-height:100vh;
-    min-height:105vh;
+    min-height:100vh;
     font-size: var(--font-body);
-    padding-top:2vh;
-
+    width:100vw;
 }
-#student-profile-container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding:1vh 2vw;
-    border:1px solid grey;
+.student-profile-container{
     border-radius:30px;
-    min-width:80vw;
-    animation: fadeIn .5s ease-in-out;
+    margin-bottom:2vh;
 }
-@keyframes fadeIn {
-    from{margin-left:10vw; opacity:0%;}
-    to{margin-left:0; opacity:100%;}
-}
-#student-profile-header{
+
+.student-profile-header{
     display:flex;
     align-items:center;
-    justify-content: center;
-    gap:10px;
 }
 
 .student-info-input{
     border:0;
     border-bottom:1px solid grey;
-    min-width:50vw;
     max-height:70vh;
-    width:100%;
     font-size:var(--font-body);
     font-family:var(--font-style);
 }
-#student-info-submit-button{
+.student-info-submit-button{
     width:20px;
     height:20px;
     border-radius:100%;
     background-color:green;
+}
+.student-info-container{
+	display:flex;
+	flex-direction: column;
+    justify-content: center;
+	border:0;
+	width:90%;
+}
+.input-container{
+	display:flex;
+	flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+	gap:10px;
+}
+.input-container:nth-child(2){
+    margin-bottom:10px;
+    border-bottom:1px dotted grey;
+}
+label{
+	font-size:1.1em;
+}
+
+.name-input{
+    font-size:1.3em;
+    padding:0;
+}
+.name-input::placeholder{
+    font-size: 1.3em;
+}
+.status-input{
+    border-radius:5px;
+    padding:.4em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: center;
+    border-bottom:0;
+    font-weight:600;
+    font-size:.6em;
+    cursor: pointer ;
+    background-color: rgb(97, 97, 97);
+}
+.level-input, .city-input, .subscription-input, .frequency-input{
+    font-size:.8em;
+    color:grey;
+}
+.description-input{
+    font-style:italic;
+    font-size:.9em;
+    color:grey;
+    margin-bottom:10px;
+    width:100%;
+    border:0;
+    word-wrap:break-word
+}
+.submit-button{
+    margin-top:12px;
+    width:100%;
+}
+.button-container{
+    display:flex;
+    flex-direction:row;
+    gap:5px;
+}
+
+.active{
+    background-color:rgb(93, 214, 93);
+    content:'active'
+}
+.inactive{
+    background-color:rgb(255, 147, 147);
+    content:'inactive'
+}
+.select-input{
+    border:0;
+    border-bottom:1px solid grey;
+    outline:0;
+    appearance: none;
+    position:relative;
 }
 

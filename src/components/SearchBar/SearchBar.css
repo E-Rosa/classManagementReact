@@ -1,22 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 :root{
     --font-body: 1.2em;
+    --darkest:#0B3948;
+    --dark-grey:#416165;
+    --light-purple:#ACB0BD;
+    --lighter-purple:#ACB0BD;
+    --lightest:#D9DBF1;
 }
 #search-bar-container{
     margin:0;
-    margin-top:5vh;
     display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-height:100vh;
-    min-height:90vh;
     font-size: var(--font-body);
     transition: all .5s ease;
+    font-family:'Poppins', sans-serif;
+    
 }
 #search-bar{
     border:0;
-    border-bottom:1px solid grey;
+    border-bottom:1px solid var(--lightest);
     font-size: var(--font-body);
+    font-family:'Poppins', sans-serif;
+    background-color:var(--darkest);
+    color:var(--lightest);
+    margin-bottom:2vh;
+}
+#search-bar::placeholder{
+    color:var(--lightest);
+}
+#search-bar:focus-visible{
+    outline:0;
 }
 #search-button{
     background-color:grey;

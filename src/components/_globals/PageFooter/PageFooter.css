@@ -1,4 +1,10 @@
-
+:root{
+    --darkest:#0B3948;
+    --dark-grey:#416165;
+    --light-purple:#ACB0BD;
+    --lighter-purple:#ACB0BD;
+    --lightest:#D9DBF1;
+}
 #main-footer{
     position: fixed;
     bottom:0;
@@ -9,9 +15,9 @@
     padding-bottom:1vh;
     padding-top:1.6vh;
     width:100vw;
-    border-top:1px solid grey;
+    border-top:1px solid var(--lightest);
     z-index:2;
-    background-color:white;
+    background-color:var(--lightest);
 }
 .footer-button{
     background-position: center;
@@ -21,16 +27,16 @@
     height:30px;
 }
 #footer-classes-button{
-    background-image: url('../assets/document-icon.png');
+    background-image: url('../../assets/document-icon.png');
 }
 #footer-students-button{
-    background-image: url('../assets/students-icon.png');
+    background-image: url('../../assets/students-icon.png');
 }
 #footer-schedule-button{
-    background-image: url('../assets/schedule-icon.png');
+    background-image: url('../../assets/schedule-icon.png');
 }
 #footer-home-button{
-    background-image: url('../assets/find-icon.png');
+    background-image: url('../../assets/find-icon.png');
     width:26px;
     height:26px;
 }

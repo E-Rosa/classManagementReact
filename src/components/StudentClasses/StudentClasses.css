@@ -1,0 +1,114 @@
+:root{
+	--pending: #ddff00;
+	--done:  rgb(93, 214, 93);
+	--miss:  rgb(255, 147, 147);
+}
+
+/*No-student page*************************************************/
+.classes-container-no-student{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.or-text{
+	color: white;
+}
+/*****************************************************************/
+/*Has-Student page************************************************/
+.classes-page-container{
+	gap:1vw;
+	width:100%;
+	padding:3em 0;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+.class-cards-container{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items:flex-start;
+	width:90vw;
+	max-width:90vw;
+}
+
+/*****************************************************************/
+/*Save button*****************************************************/
+.general-save-button{
+	transition: .4s ease;
+	cursor:pointer;
+	font-family: 'Poppins', sans-serif;
+	width:40px;
+	height:40px;
+	border-radius:100%;
+	border:0;
+	background-color: var(--darkest);
+	color:white;
+	border:1px solid white;
+	box-shadow: 1.5px 1.5px var(--light-purple);
+}
+.general-save-button:hover{
+	background-color:white;
+	color:var(--darkest);
+	box-shadow: 0px 0px var(--light-purple);
+}
+/*Status button***************************************************/
+.status-button{
+	width: 15px;
+	height: 15px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 100%;
+	cursor:pointer;
+}
+.pending{
+	background-color: var(--pending);
+}
+.done{
+	background-color: var(--done);
+}
+.miss{
+	background-color: var(--miss);
+}
+/******************************************************************/
+/*Containers*******************************************************/
+.class-container{
+	padding: 1em;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: -5px 5px var(--dark-grey);
+	animation: fadeInFromTop .5s ease-in;
+	max-width:22,5vw;
+	min-width:300px;
+}
+.class-form{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+/******************************************************************/
+/*Input general styles*********************************************/
+.studentClass-text-input{
+	max-width:200px;
+}
+.studentClass-number-input{
+	max-width:4vw;
+}
+/******************************************************************/
+/*Input specific styles********************************************/
+.title-input{
+	font-size: 1.3em;
+	border-bottom:  1px solid grey;
+	margin-bottom: 2vh;
+}
+.grade-input{
+	font-size: 1.3em;
+}
+.status-button{
+	margin-left: auto;
+	border: 1px solid grey;
+}
+/******************************************************************/

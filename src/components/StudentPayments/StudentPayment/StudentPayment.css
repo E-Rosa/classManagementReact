@@ -1,0 +1,30 @@
+.StudentPayment{
+    display:flex;
+    flex-direction: column;
+    gap: 1vh;
+    min-width:200px;
+    background-color: white;
+}
+.payment-form-container{
+    display:flex;
+    flex-direction: column;
+}
+.payment-delete-button{
+    align-self:flex-end;
+}
+.paymentValue-input{
+    font-size:2em;
+}
+.paymentValue-and-symbol-container{
+    justify-content: flex-start;
+    gap:5px;
+    align-items: flex-end;
+}
+.paymentStatus{
+    justify-self: flex-end;
+}
+.payment-row-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
